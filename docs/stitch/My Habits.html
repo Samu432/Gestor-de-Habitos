@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="web_standard" name="shell-type">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        @layer base {
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                overscroll-behavior: none;
+            }
+
+            main>:first-child {
+                margin-top: 0 !important;
+            }
+
+            main>:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+        id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-container-low": "#0d1c2d", "secondary-container": "#571bc1", "error-container": "#93000a", "on-secondary-container": "#c4abff", "on-error": "#690005", "secondary-fixed": "#e9ddff", "primary": "#adc6ff", "on-secondary": "#3c0091", "tertiary": "#4edea3", "inverse-on-surface": "#233143", "surface-container-high": "#1c2b3c", "on-primary-fixed": "#001a42", "surface-container": "#122131", "outline": "#8c909f", "secondary-fixed-dim": "#d0bcff", "on-tertiary-fixed": "#002113", "on-surface-variant": "#c2c6d6", "surface-container-lowest": "#010f1f", "error": "#ffb4ab", "on-background": "#d4e4fa", "on-primary": "#002e6a", "on-secondary-fixed": "#23005c", "on-tertiary-fixed-variant": "#005236", "primary-fixed": "#d8e2ff", "outline-variant": "#424754", "inverse-surface": "#d4e4fa", "background": "#051424", "on-tertiary": "#003824", "on-secondary-fixed-variant": "#5516be", "primary-fixed-dim": "#adc6ff", "inverse-primary": "#005ac2", "on-primary-container": "#00285d", "surface-variant": "#273647", "tertiary-fixed-dim": "#4edea3", "primary-container": "#4d8eff", "surface-tint": "#adc6ff", "on-tertiary-container": "#00311f", "secondary": "#d0bcff", "surface": "#051424", "surface-bright": "#2c3a4c", "on-primary-fixed-variant": "#004395", "tertiary-container": "#00a572", "surface-dim": "#051424", "tertiary-fixed": "#6ffbbe" }, borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" }, spacing: { gutter: "1rem", "space-md": "1rem", "space-xl": "2rem", "margin-desktop": "2.5rem", margin: "1rem", "gutter-desktop": "1.5rem", "margin-tablet": "1.5rem", "space-lg": "1.5rem", "space-2xl": "3rem", "space-sm": "0.5rem", "space-xs": "0.25rem" }, fontFamily: { "headline-lg": ["Space Grotesk"], "display-mobile": ["Space Grotesk"], "body-md": ["Plus Jakarta Sans"], "headline-sm": ["Space Grotesk"], "label-lg": ["Space Grotesk"], "headline-lg-mobile": ["Space Grotesk"], display: ["Space Grotesk"], "body-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-md": ["Space Grotesk"], "label-md": ["Space Grotesk"], "label-sm": ["Space Grotesk"] }, fontSize: { "headline-lg": ["30px", { lineHeight: "38px", letterSpacing: "-0.01em", fontWeight: "700" }], "display-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }], "body-md": ["14px", { lineHeight: "22px", fontWeight: "400" }], "headline-sm": ["18px", { lineHeight: "26px", fontWeight: "600" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.06em", fontWeight: "700" }], "headline-lg-mobile": ["22px", { lineHeight: "30px", letterSpacing: "0em", fontWeight: "700" }], display: ["40px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "700" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "500" }], "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }], "headline-md": ["22px", { lineHeight: "30px", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }], "label-sm": ["10px", { lineHeight: "14px", letterSpacing: "0.08em", fontWeight: "700" }] } } } };</script>
+</head>
+
+<body
+    class="bg-background font-body-md text-on-surface antialiased min-h-screen selection:bg-secondary selection:text-on-secondary">
+    <div class="min-h-screen w-full flex flex-col items-center bg-background">
+        <div class="w-full max-w-xl flex flex-col min-h-screen relative shadow-[0_0_50px_rgba(0,0,0,0.8)]">
+            <header
+                class="fixed top-0 w-full max-w-xl z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_20px_rgba(1,15,31,0.8)]">
+                <div class="h-20 px-space-md flex items-center justify-between">
+                    <div class="flex items-center gap-space-sm"><img alt="First Step Logo"
+                            class="h-8 w-auto object-contain"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_fbI5XwCclSIycRZKFQQGEs7-thjUgitV3k7aCvPOu2dLXGFvWFA8ChV2FscdyiATOMW9cmXYKlEXxBL38H_NjnO2uQmMH3yqCfPVmus_klHtypWK4y8m2B4mt0H3jtqieip6b3wGKY_dos6ytzRyyWxBwe8IZsUru03XjdG4KETyrGq8-0d_jiX4tiwCn2mybeqWpxxremlpRTlkIPblLVJp8Wym24BLtisu7lrJiN_A9lBss6rf5w">
+                        <div class="flex flex-col">
+                            <div class="flex items-center gap-space-xs"><span
+                                    class="font-headline-sm text-headline-sm uppercase text-primary tracking-wide">First
+                                    Step</span><span
+                                    class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-high text-tertiary uppercase">LVL
+                                    08</span></div><span
+                                class="font-label-sm text-label-sm text-on-surface-variant uppercase">Sube un escalón
+                                cada día</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-space-sm">
+                        <div class="flex items-center gap-1 px-space-sm py-1 rounded bg-surface-container-low"><span
+                                class="material-symbols-outlined text-secondary text-[16px]">local_fire_department</span><span
+                                class="font-label-sm text-label-sm text-secondary-fixed font-bold">14D</span></div>
+                        <div class="p-0.5 rounded-full bg-secondary-container"><img alt="Profile"
+                                class="w-8 h-8 rounded-full object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5BVk1N_vq-J9iBAe5lIFH7ZGJ0Uicl44PCHC8bdb9VdrTzLP5_7eb5QeeN7f1J7BqVVo5-z90HVToR6CZ5ZcZ_Ryjw9NLBytnDFK6dnfQC4NeMPpzY4ebOmV4U5DJBWIPa4sXi9x3BVn-NGCGXweA4lD1UM1LdBwpaqcQq8Tpq4KXL3Y4J9h47A4IIj1fkTFDt1EfkNku9TRW9tqPZxKStKX8qN0y2a80lU4jCsuZ1Ku0RfDL7drobQ">
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <main class="w-full pt-20 pb-28 px-space-md flex-1">
+                <div class="flex flex-col w-full gap-space-lg">
+                    <div class="relative overflow-hidden rounded-xl bg-surface-container-low p-space-md shadow-xl">
+                        <div
+                            class="absolute -right-8 -top-8 w-36 h-36 rounded-full bg-secondary-container/20 blur-2xl pointer-events-none">
+                        </div>
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <div class="flex items-center gap-space-xs">
+                                <span class="material-symbols-outlined text-primary text-[20px]">terminal</span>
+                                <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">MOTOR
+                                    DE GESTIÓN DE MISIONES</span>
+                            </div>
+                            <h1 class="font-headline-lg text-headline-lg uppercase text-primary tracking-wide"
+                                style="color: rgb(255, 255, 255);">REGISTRO DE MISIONES Y HÁBITOS</h1>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Configura tus desafíos diarios
+                                para escalar</p>
+                        </div>
+                        <div
+                            class="mt-space-md grid grid-cols-3 gap-space-xs bg-surface-container-lowest p-space-xs rounded-lg text-center">
+                            <div class="flex flex-col py-1">
+                                <span class="font-label-sm text-label-sm text-outline">MISIONES ACTIVAS</span>
+                                <span class="font-headline-sm text-headline-sm text-primary">04 / 08</span>
+                            </div>
+                            <div class="flex flex-col py-1 bg-surface-container-high/40 rounded">
+                                <span class="font-label-sm text-label-sm text-outline">POTENCIAL DE ESCALÓN</span>
+                                <span class="font-headline-sm text-headline-sm text-tertiary">+115 EXP</span>
+                            </div>
+                            <div class="flex flex-col py-1">
+                                <span class="font-label-sm text-label-sm text-outline">CICLO DE RANGO</span>
+                                <span class="font-headline-sm text-headline-sm text-secondary-fixed">DÍA 14</span>
+                            </div>
+                        </div>
+                    </div>
+                    <section
+                        class="rounded-xl bg-surface-container p-space-md shadow-xl flex flex-col gap-space-md relative overflow-hidden">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-space-xs">
+                                <span
+                                    class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm uppercase shadow-sm">
+                                    + CREAR NUEVO HÁBITO
+                                </span>
+                                <span class="font-label-sm text-label-sm text-tertiary uppercase">MODO: ACTIVO</span>
+                            </div>
+                            <span class="material-symbols-outlined text-primary text-[20px]">auto_fix_high</span>
+                        </div>
+                        <div class="flex flex-col gap-space-xs">
+                            <label
+                                class="font-label-sm text-label-sm uppercase text-on-surface-variant flex items-center justify-between"
+                                style="color: rgb(255, 255, 255);">
+                                <span class="">OBJETIVO DEL HÁBITO</span>
+                                <span class="text-outline">Máx 32 caracteres</span>
+                            </label>
+                            <div class="relative">
+                                <input
+                                    class="w-full bg-surface-container-lowest text-on-surface placeholder:text-outline text-body-md font-body-md rounded-xl px-space-md py-3 focus:outline-none focus:bg-surface-container-low shadow-inner transition-colors"
+                                    id="habitNameInput" placeholder="Correr 15 minutos al amanecer" type="text"
+                                    value="Correr 15 minutos al amanecer">
+                                <span
+                                    class="material-symbols-outlined absolute right-3 top-3 text-secondary text-[20px] pointer-events-none">edit_note</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-space-xs">
+                            <label class="font-label-sm text-label-sm uppercase text-on-surface-variant"
+                                style="color: #ffffff;">CLASE DE DIFICULTAD Y EXP</label>
+                            <div class="grid grid-cols-3 gap-space-xs" id="difficultyGroup">
+                                <button
+                                    class="diff-btn flex flex-col items-center justify-center p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all text-center"
+                                    data-diff="easy" type="button">
+                                    <span class="font-label-sm text-label-sm uppercase text-tertiary">Fácil</span>
+                                    <span class="font-headline-sm text-headline-sm text-on-surface">+10 EXP</span>
+                                    <span class="font-label-sm text-label-sm text-outline mt-0.5">Rango 1</span>
+                                </button>
+                                <button
+                                    class="diff-btn active-diff flex flex-col items-center justify-center p-space-sm rounded-lg bg-surface-container-high shadow-md transition-all text-center"
+                                    data-diff="medium" type="button">
+                                    <span class="font-label-sm text-label-sm uppercase text-secondary">Medio</span>
+                                    <span class="font-headline-sm text-headline-sm text-primary">+25 EXP</span>
+                                    <span class="font-label-sm text-label-sm text-tertiary mt-0.5">Recomendado</span>
+                                </button>
+                                <button
+                                    class="diff-btn flex flex-col items-center justify-center p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all text-center"
+                                    data-diff="hard" type="button">
+                                    <span class="font-label-sm text-label-sm uppercase text-error">Difícil</span>
+                                    <span class="font-headline-sm text-headline-sm text-on-surface">+50 EXP</span>
+                                    <span class="font-label-sm text-label-sm text-outline mt-0.5">Rango Jefe</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-space-xs">
+                            <label class="font-label-sm text-label-sm uppercase text-on-surface-variant"
+                                style="color: #ffffff;">FIRMA DE RUNA / ICONO</label>
+                            <div class="grid grid-cols-4 gap-2 bg-surface-container-lowest p-space-xs rounded-xl"
+                                id="iconSelector">
+                                <button
+                                    class="icon-choice p-2.5 rounded-lg flex flex-col items-center justify-center bg-surface-container hover:bg-surface-container-high transition-colors group"
+                                    type="button">
+                                    <span
+                                        class="material-symbols-outlined text-[24px] text-primary group-hover:scale-110 transition-transform">water_drop</span>
+                                    <span class="font-label-sm text-label-sm text-outline mt-1">Agua</span>
+                                </button>
+                                <button
+                                    class="icon-choice active-icon p-2.5 rounded-lg flex flex-col items-center justify-center bg-secondary-container shadow-md transition-colors group"
+                                    type="button">
+                                    <span
+                                        class="material-symbols-outlined text-[24px] text-on-secondary-container group-hover:scale-110 transition-transform">menu_book</span>
+                                    <span
+                                        class="font-label-sm text-label-sm text-on-secondary-container mt-1">Libro</span>
+                                </button>
+                                <button
+                                    class="icon-choice p-2.5 rounded-lg flex flex-col items-center justify-center bg-surface-container hover:bg-surface-container-high transition-colors group"
+                                    type="button">
+                                    <span
+                                        class="material-symbols-outlined text-[24px] text-primary group-hover:scale-110 transition-transform">fitness_center</span>
+                                    <span class="font-label-sm text-label-sm text-outline mt-1">Gimnasio</span>
+                                </button>
+                                <button
+                                    class="icon-choice p-2.5 rounded-lg flex flex-col items-center justify-center bg-surface-container hover:bg-surface-container-high transition-colors group"
+                                    type="button">
+                                    <span
+                                        class="material-symbols-outlined text-[24px] text-primary group-hover:scale-110 transition-transform">code</span>
+                                    <span class="font-label-sm text-label-sm text-outline mt-1">Código</span>
+                                </button>
+                                <button
+                                    class="icon-choice p-2.5 rounded-lg flex flex-col items-center justify-center bg-surface-container hover:bg-surface-container-high transition-colors group"
+                                    type="button">
+                                    <span
+                                        class="material-symbols-outlined text-[24px] text-error group-hover:scale-110 transition-transform">favorite</span>
+                                    <span class="font-label-sm text-label-sm text-outline mt-1">Salud</span>
+                                </button>
+                                <button
+                                    class="icon-choice p-2.5 rounded-lg flex flex-col items-center justify-center bg-surface-container hover:bg-surface-container-high transition-colors group"
+                                    type="button">
+                                    <span
+                                        class="material-symbols-outlined text-[24px] text-secondary group-hover:scale-110 transition-transform">dark_mode</span>
+                                    <span class="font-label-sm text-label-sm text-outline mt-1">Sueño</span>
+                                </button>
+                                <button
+                                    class="icon-choice p-2.5 rounded-lg flex flex-col items-center justify-center bg-surface-container hover:bg-surface-container-high transition-colors group"
+                                    type="button">
+                                    <span
+                                        class="material-symbols-outlined text-[24px] text-tertiary group-hover:scale-110 transition-transform">nutrition</span>
+                                    <span class="font-label-sm text-label-sm text-outline mt-1">Dieta</span>
+                                </button>
+                                <button
+                                    class="icon-choice p-2.5 rounded-lg flex flex-col items-center justify-center bg-surface-container hover:bg-surface-container-high transition-colors group"
+                                    type="button">
+                                    <span
+                                        class="material-symbols-outlined text-[24px] text-primary-fixed group-hover:scale-110 transition-transform">music_note</span>
+                                    <span class="font-label-sm text-label-sm text-outline mt-1">Música</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-space-xs">
+                            <label
+                                class="font-label-sm text-label-sm uppercase text-on-surface-variant flex justify-between items-center"
+                                style="color: #ffffff;">
+                                <span class="">FRECUENCIA ACTIVA</span>
+                                <span class="text-tertiary">4 DÍAS PROGRAMADOS</span>
+                            </label>
+                            <div class="grid grid-cols-7 gap-1.5" id="daySelector">
+                                <button
+                                    class="day-toggle py-2 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md transition-all shadow-sm"
+                                    data-day="L" type="button">L</button>
+                                <button
+                                    class="day-toggle py-2 rounded-lg bg-surface-container-lowest text-outline font-label-md text-label-md hover:bg-surface-container-high transition-all"
+                                    data-day="M" type="button">M</button>
+                                <button
+                                    class="day-toggle py-2 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md transition-all shadow-sm"
+                                    data-day="X" type="button">X</button>
+                                <button
+                                    class="day-toggle py-2 rounded-lg bg-surface-container-lowest text-outline font-label-md text-label-md hover:bg-surface-container-high transition-all"
+                                    data-day="J" type="button">J</button>
+                                <button
+                                    class="day-toggle py-2 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md transition-all shadow-sm"
+                                    data-day="V" type="button">V</button>
+                                <button
+                                    class="day-toggle py-2 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md transition-all shadow-sm"
+                                    data-day="S" type="button">S</button>
+                                <button
+                                    class="day-toggle py-2 rounded-lg bg-surface-container-lowest text-outline font-label-md text-label-md hover:bg-surface-container-high transition-all"
+                                    data-day="D" type="button">D</button>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full mt-2 py-3.5 px-space-md rounded-xl bg-primary-container hover:bg-primary text-on-primary font-headline-sm text-headline-sm uppercase tracking-wider flex items-center justify-center gap-space-xs shadow-lg transition-transform active:scale-[0.98]"
+                            id="addHabitBtn" type="button" style="color: rgb(255, 255, 255);">
+                            <span class="material-symbols-outlined text-[20px]">bolt</span>
+                            <span class="">AÑADIR A ESCALONES DIARIOS [GUARDAR]</span>
+                        </button>
+                    </section>
+                    <section class="flex flex-col gap-space-sm">
+                        <div class="flex items-center justify-between px-space-xs">
+                            <div class="flex items-center gap-space-xs">
+                                <span class="font-headline-sm text-headline-sm uppercase text-on-surface"
+                                    style="color: rgb(255, 255, 255);">ROSTER ACTIVO</span>
+                                <span
+                                    class="px-2 py-0.5 rounded bg-surface-container-highest font-label-sm text-label-sm text-primary">4
+                                    CARGADOS</span>
+                            </div>
+                            <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">ARRASTRA
+                                PARA PRIORIZAR</span>
+                        </div>
+                        <div class="flex flex-col gap-space-xs" id="habitList">
+                            <div
+                                class="habit-item flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-all shadow-sm">
+                                <div class="flex items-center gap-space-sm min-w-0">
+                                    <span
+                                        class="material-symbols-outlined text-outline cursor-grab text-[20px]">drag_indicator</span>
+                                    <div
+                                        class="w-10 h-10 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary shrink-0">
+                                        <span class="material-symbols-outlined text-[22px]">water_drop</span>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <div class="flex items-center gap-1.5 flex-wrap">
+                                            <span class="font-body-lg text-body-lg text-on-surface truncate"
+                                                style="color: rgb(255, 255, 255);">Beber 2L de agua</span>
+                                            <span
+                                                class="px-1.5 py-0.5 rounded bg-tertiary-container/30 text-tertiary font-label-sm text-label-sm uppercase">Fácil
+                                                +10 EXP</span>
+                                        </div>
+                                        <div class="flex items-center gap-1 mt-0.5">
+                                            <span
+                                                class="font-label-sm text-label-sm text-secondary-fixed font-bold">DIARIO</span>
+                                            <span class="font-body-sm text-body-sm text-outline">• racha de 14d</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-1 shrink-0 ml-2">
+                                    <button
+                                        class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary transition-colors"
+                                        title="Editar misión" type="button">
+                                        <span class="material-symbols-outlined text-[18px]">edit</span>
+                                    </button>
+                                    <button
+                                        class="delete-btn p-2 rounded-lg bg-surface-container hover:bg-error-container text-outline hover:text-on-error-container transition-colors"
+                                        title="Eliminar misión" type="button">
+                                        <span class="material-symbols-outlined text-[18px]">delete</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div
+                                class="habit-item flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-all shadow-sm">
+                                <div class="flex items-center gap-space-sm min-w-0">
+                                    <span
+                                        class="material-symbols-outlined text-outline cursor-grab text-[20px]">drag_indicator</span>
+                                    <div
+                                        class="w-10 h-10 rounded-lg bg-secondary-container/20 flex items-center justify-center text-secondary shrink-0">
+                                        <span class="material-symbols-outlined text-[22px]">fitness_center</span>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <div class="flex items-center gap-1.5 flex-wrap">
+                                            <span class="font-body-lg text-body-lg text-on-surface truncate"
+                                                style="color: rgb(255, 255, 255);">Trote matutino 15m</span>
+                                            <span
+                                                class="px-1.5 py-0.5 rounded bg-secondary-container/40 text-secondary-fixed font-label-sm text-label-sm uppercase">Medio
+                                                +25 EXP</span>
+                                        </div>
+                                        <div class="flex items-center gap-1 mt-0.5">
+                                            <div class="flex gap-0.5">
+                                                <span
+                                                    class="px-1 py-0.2 rounded bg-surface-container-highest font-label-sm text-label-sm text-primary">L</span>
+                                                <span
+                                                    class="px-1 py-0.2 rounded bg-surface-container-highest font-label-sm text-label-sm text-primary">M</span>
+                                                <span
+                                                    class="px-1 py-0.2 rounded bg-surface-container-highest font-label-sm text-label-sm text-primary">V</span>
+                                            </div>
+                                            <span class="font-body-sm text-body-sm text-outline">• racha de 8d</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-1 shrink-0 ml-2">
+                                    <button
+                                        class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary transition-colors"
+                                        title="Editar misión" type="button">
+                                        <span class="material-symbols-outlined text-[18px]">edit</span>
+                                    </button>
+                                    <button
+                                        class="delete-btn p-2 rounded-lg bg-surface-container hover:bg-error-container text-outline hover:text-on-error-container transition-colors"
+                                        title="Eliminar misión" type="button">
+                                        <span class="material-symbols-outlined text-[18px]">delete</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div
+                                class="habit-item flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-all shadow-sm">
+                                <div class="flex items-center gap-space-sm min-w-0">
+                                    <span
+                                        class="material-symbols-outlined text-outline cursor-grab text-[20px]">drag_indicator</span>
+                                    <div
+                                        class="w-10 h-10 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary shrink-0">
+                                        <span class="material-symbols-outlined text-[22px]">code</span>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <div class="flex items-center gap-1.5 flex-wrap">
+                                            <span class="font-body-lg text-body-lg text-on-surface truncate"
+                                                style="color: rgb(255, 255, 255);">Programar 45 min</span>
+                                            <span
+                                                class="px-1.5 py-0.5 rounded bg-error-container/40 text-error font-label-sm text-label-sm uppercase">Difícil
+                                                +50 EXP</span>
+                                        </div>
+                                        <div class="flex items-center gap-1 mt-0.5">
+                                            <span class="font-label-sm text-label-sm text-tertiary">LUN - VIE</span>
+                                            <span class="font-body-sm text-body-sm text-outline">• racha de 22d</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-1 shrink-0 ml-2">
+                                    <button
+                                        class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary transition-colors"
+                                        title="Editar misión" type="button">
+                                        <span class="material-symbols-outlined text-[18px]">edit</span>
+                                    </button>
+                                    <button
+                                        class="delete-btn p-2 rounded-lg bg-surface-container hover:bg-error-container text-outline hover:text-on-error-container transition-colors"
+                                        title="Eliminar misión" type="button">
+                                        <span class="material-symbols-outlined text-[18px]">delete</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div
+                                class="habit-item flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-all shadow-sm">
+                                <div class="flex items-center gap-space-sm min-w-0">
+                                    <span
+                                        class="material-symbols-outlined text-outline cursor-grab text-[20px]">drag_indicator</span>
+                                    <div
+                                        class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary-fixed shrink-0">
+                                        <span class="material-symbols-outlined text-[22px]">cleaning_services</span>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <div class="flex items-center gap-1.5 flex-wrap">
+                                            <span class="font-body-lg text-body-lg text-on-surface truncate"
+                                                style="color: rgb(255, 255, 255);">Limpieza profunda</span>
+                                            <span
+                                                class="px-1.5 py-0.5 rounded bg-secondary-container/40 text-secondary-fixed font-label-sm text-label-sm uppercase">Medio
+                                                +25 EXP</span>
+                                        </div>
+                                        <div class="flex items-center gap-1 mt-0.5">
+                                            <span class="font-label-sm text-label-sm text-secondary">SOLO FIN DE
+                                                SEMANA</span>
+                                            <span class="font-body-sm text-body-sm text-outline">• racha de 4 sem</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-1 shrink-0 ml-2">
+                                    <button
+                                        class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary transition-colors"
+                                        title="Editar misión" type="button">
+                                        <span class="material-symbols-outlined text-[18px]">edit</span>
+                                    </button>
+                                    <button
+                                        class="delete-btn p-2 rounded-lg bg-surface-container hover:bg-error-container text-outline hover:text-on-error-container transition-colors"
+                                        title="Eliminar misión" type="button">
+                                        <span class="material-symbols-outlined text-[18px]">delete</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="rounded-xl bg-surface-container p-space-md shadow-xl flex flex-col gap-space-md">
+                        <div class="flex flex-col gap-1">
+                            <div class="flex items-center justify-between">
+                                <h2 class="font-headline-sm text-headline-sm uppercase text-secondary flex items-center gap-2"
+                                    style="color: rgb(255, 255, 255);">
+                                    <span
+                                        class="material-symbols-outlined text-secondary text-[22px]">military_tech</span>
+                                    <span class="">CONFIGURACIÓN DE RECOMPENSAS</span>
+                                </h2>
+                                <span
+                                    class="px-2 py-0.5 rounded bg-surface-container-highest text-tertiary font-label-sm text-label-sm">DESBLOQUEO
+                                    AUTOMÁTICO</span>
+                            </div>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Date un premio al alcanzar los
+                                hitos de la escalera</p>
+                        </div>
+                        <div class="flex flex-col gap-space-sm">
+                            <div class="flex flex-col gap-1">
+                                <div class="flex items-center justify-between">
+                                    <span
+                                        class="font-label-sm text-label-sm uppercase text-tertiary flex items-center gap-1">
+                                        <span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                                        Recompensa al 25%
+                                    </span>
+                                    <span class="font-label-sm text-label-sm text-outline">Desbloqueo Nivel 1</span>
+                                </div>
+                                <div class="relative">
+                                    <input
+                                        class="w-full bg-surface-container-lowest text-on-surface text-body-md font-body-md rounded-xl px-space-md py-2.5 focus:outline-none focus:bg-surface-container-low shadow-inner transition-colors"
+                                        type="text" value="Breve descanso de 5 min en redes">
+                                    <span
+                                        class="material-symbols-outlined absolute right-3 top-2.5 text-tertiary text-[18px]">coffee</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <div class="flex items-center justify-between">
+                                    <span
+                                        class="font-label-sm text-label-sm uppercase text-primary flex items-center gap-1">
+                                        <span class="w-2 h-2 rounded-full bg-primary"></span>
+                                        Recompensa al 50%
+                                    </span>
+                                    <span class="font-label-sm text-label-sm text-outline">Hito de medio camino</span>
+                                </div>
+                                <div class="relative">
+                                    <input
+                                        class="w-full bg-surface-container-lowest text-on-surface text-body-md font-body-md rounded-xl px-space-md py-2.5 focus:outline-none focus:bg-surface-container-low shadow-inner transition-colors"
+                                        type="text" value="Matcha latte helado especial">
+                                    <span
+                                        class="material-symbols-outlined absolute right-3 top-2.5 text-primary text-[18px]">local_cafe</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <div class="flex items-center justify-between">
+                                    <span
+                                        class="font-label-sm text-label-sm uppercase text-secondary flex items-center gap-1">
+                                        <span class="w-2 h-2 rounded-full bg-secondary"></span>
+                                        Recompensa al 75%
+                                    </span>
+                                    <span class="font-label-sm text-label-sm text-outline">Impulso de gran altura</span>
+                                </div>
+                                <div class="relative">
+                                    <input
+                                        class="w-full bg-surface-container-lowest text-on-surface text-body-md font-body-md rounded-xl px-space-md py-2.5 focus:outline-none focus:bg-surface-container-low shadow-inner transition-colors"
+                                        type="text" value="Postre de chocolate después de cenar">
+                                    <span
+                                        class="material-symbols-outlined absolute right-3 top-2.5 text-secondary text-[18px]">bakery_dining</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <div class="flex items-center justify-between">
+                                    <span
+                                        class="font-label-sm text-label-sm uppercase text-tertiary-fixed flex items-center gap-1">
+                                        <span class="w-2 h-2 rounded-full bg-tertiary-fixed"></span>
+                                        Recompensa al 100%
+                                    </span>
+                                    <span class="font-label-sm text-label-sm text-tertiary font-bold">Corona de la
+                                        Cima</span>
+                                </div>
+                                <div class="relative">
+                                    <input
+                                        class="w-full bg-surface-container-lowest text-on-surface text-body-md font-body-md rounded-xl px-space-md py-2.5 focus:outline-none focus:bg-surface-container-low shadow-inner transition-colors"
+                                        type="text" value="¡2 horas de videojuegos sin culpa!">
+                                    <span
+                                        class="material-symbols-outlined absolute right-3 top-2.5 text-tertiary-fixed text-[18px]">sports_esports</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full py-3 px-space-md rounded-xl bg-surface-container-high hover:bg-secondary-container text-on-surface hover:text-on-secondary-container font-headline-sm text-headline-sm uppercase tracking-wide flex items-center justify-center gap-space-xs transition-colors shadow-sm"
+                            id="updateRewardsBtn" type="button" style="color: rgb(255, 255, 255);">
+                            <span class="material-symbols-outlined text-[20px]">award_star</span>
+                            <span class="">ACTUALIZAR RECOMPENSAS</span>
+                        </button>
+                    </section>
+                    <script>
+                        (() => {
+                            // Highlight active nav in app shell
+                            const habitNav = document.querySelector('footer nav a[data-path="habits"]');
+                            if (habitNav) {
+                                document.querySelectorAll('footer nav a').forEach(el => {
+                                    el.className = "flex-1 flex flex-col items-center justify-center py-2 px-space-sm rounded-lg text-on-surface-variant hover:text-on-surface transition-all gap-1";
+                                });
+                                habitNav.className = "flex-1 flex flex-col items-center justify-center py-2 px-space-sm rounded-lg bg-secondary-container text-on-secondary-container font-headline-sm shadow-md gap-1";
+                            }
+
+                            // Difficulty selector handling
+                            const diffButtons = document.querySelectorAll('#difficultyGroup .diff-btn');
+                            diffButtons.forEach(btn => {
+                                btn.addEventListener('click', () => {
+                                    diffButtons.forEach(b => {
+                                        b.classList.remove('active-diff', 'bg-surface-container-high', 'shadow-md');
+                                        b.classList.add('bg-surface-container-low');
+                                    });
+                                    btn.classList.add('active-diff', 'bg-surface-container-high', 'shadow-md');
+                                    btn.classList.remove('bg-surface-container-low');
+                                });
+                            });
+
+                            // Icon Selector handling
+                            const iconButtons = document.querySelectorAll('#iconSelector .icon-choice');
+                            iconButtons.forEach(btn => {
+                                btn.addEventListener('click', () => {
+                                    iconButtons.forEach(b => {
+                                        b.classList.remove('active-icon', 'bg-secondary-container', 'shadow-md');
+                                        b.classList.add('bg-surface-container');
+                                        const label = b.querySelector('span:last-child');
+                                        if (label) label.className = 'font-label-sm text-label-sm text-outline mt-1';
+                                    });
+                                    btn.classList.add('active-icon', 'bg-secondary-container', 'shadow-md');
+                                    btn.classList.remove('bg-surface-container');
+                                    const label = btn.querySelector('span:last-child');
+                                    if (label) label.className = 'font-label-sm text-label-sm text-on-secondary-container mt-1';
+                                });
+                            });
+
+                            // Day selector toggling
+                            const dayButtons = document.querySelectorAll('#daySelector .day-toggle');
+                            dayButtons.forEach(btn => {
+                                btn.addEventListener('click', () => {
+                                    const isActive = btn.classList.contains('bg-primary-container');
+                                    if (isActive) {
+                                        btn.classList.remove('bg-primary-container', 'text-on-primary-container', 'shadow-sm');
+                                        btn.classList.add('bg-surface-container-lowest', 'text-outline');
+                                    } else {
+                                        btn.classList.remove('bg-surface-container-lowest', 'text-outline');
+                                        btn.classList.add('bg-primary-container', 'text-on-primary-container', 'shadow-sm');
+                                    }
+                                });
+                            });
+
+                            // Delete confirmations with interactive state
+                            document.querySelectorAll('.delete-btn').forEach(btn => {
+                                btn.addEventListener('click', (e) => {
+                                    e.stopPropagation();
+                                    const isArmed = btn.getAttribute('data-armed') === 'true';
+                                    if (!isArmed) {
+                                        btn.setAttribute('data-armed', 'true');
+                                        btn.classList.remove('text-outline');
+                                        btn.classList.add('bg-error', 'text-on-error');
+                                        const icon = btn.querySelector('span');
+                                        if (icon) icon.innerText = 'check';
+                                        setTimeout(() => {
+                                            btn.removeAttribute('data-armed');
+                                            btn.classList.remove('bg-error', 'text-on-error');
+                                            btn.classList.add('text-outline');
+                                            if (icon) icon.innerText = 'delete';
+                                        }, 3000);
+                                    } else {
+                                        const item = btn.closest('.habit-item');
+                                        if (item) {
+                                            item.style.transition = 'opacity 0.2s, transform 0.2s';
+                                            item.style.opacity = '0';
+                                            item.style.transform = 'translateX(20px)';
+                                            setTimeout(() => item.remove(), 200);
+                                        }
+                                    }
+                                });
+                            });
+
+                            // Feedback on Save
+                            const addBtn = document.getElementById('addHabitBtn');
+                            if (addBtn) {
+                                addBtn.addEventListener('click', () => {
+                                    const original = addBtn.innerHTML;
+                                    addBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">done_all</span><span>¡Hábito Creado!</span>';
+                                    addBtn.classList.remove('bg-primary-container');
+                                    addBtn.classList.add('bg-tertiary-container', 'text-on-tertiary');
+                                    setTimeout(() => {
+                                        addBtn.innerHTML = original;
+                                        addBtn.classList.remove('bg-tertiary-container', 'text-on-tertiary');
+                                        addBtn.classList.add('bg-primary-container');
+                                    }, 1600);
+                                });
+                            }
+
+                            const updateRewardsBtn = document.getElementById('updateRewardsBtn');
+                            if (updateRewardsBtn) {
+                                updateRewardsBtn.addEventListener('click', () => {
+                                    const original = updateRewardsBtn.innerHTML;
+                                    updateRewardsBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">verified</span><span>¡Recompensas Sincronizadas!</span>';
+                                    updateRewardsBtn.classList.add('bg-secondary', 'text-on-secondary');
+                                    setTimeout(() => {
+                                        updateRewardsBtn.innerHTML = original;
+                                        updateRewardsBtn.classList.remove('bg-secondary', 'text-on-secondary');
+                                    }, 1600);
+                                });
+                            }
+                        })();
+                    </script>
+                </div>
+            </main>
+            <footer class="fixed bottom-4 left-0 right-0 z-40 flex justify-center px-space-md pointer-events-none">
+                <nav class="pointer-events-auto w-full max-w-md bg-surface-container/95 backdrop-blur-xl rounded-xl p-space-xs flex items-center justify-around shadow-[0_12px_32px_rgba(1,15,31,0.9)]"
+                    data-active-classes="bg-secondary-container text-on-secondary-container font-headline-sm shadow-[0_0_16px_rgba(87,27,193,0.5)]">
+                    <a class="flex-1 flex flex-col items-center justify-center py-2 px-space-sm rounded-lg text-on-surface-variant hover:text-on-surface transition-all gap-1"
+                        data-path="home" href="#"><span
+                            class="material-symbols-outlined text-[22px]">sports_esports</span><span
+                            class="font-label-sm text-label-sm uppercase">HOY</span></a><a aria-current="page"
+                        class="flex-1 flex flex-col items-center justify-center py-2 px-space-sm rounded-lg transition-all gap-1 bg-secondary-container text-on-secondary-container font-headline-sm shadow-[0_0_16px_rgba(87,27,193,0.5)]"
+                        data-path="habits" href="#"><span
+                            class="material-symbols-outlined text-[22px]">format_list_bulleted</span><span
+                            class="font-label-sm text-label-sm uppercase">HÁBITOS</span></a><a
+                        class="flex-1 flex flex-col items-center justify-center py-2 px-space-sm rounded-lg text-on-surface-variant hover:text-on-surface transition-all gap-1"
+                        data-path="profile" href="#"><span
+                            class="material-symbols-outlined text-[22px]">shield_person</span><span
+                            class="font-label-sm text-label-sm uppercase">PERFIL</span></a></nav>
+            </footer>
+        </div>
+    </div>
+
+</body>
+
+</html>

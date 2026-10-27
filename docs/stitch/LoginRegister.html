@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html class="dark" lang="es" style="">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="web_blank" name="shell-type">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        @layer base {
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                overscroll-behavior: none;
+            }
+
+            main>:first-child {
+                margin-top: 0 !important;
+            }
+
+            main>:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+        id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-container-low": "#0d1c2d", "secondary-container": "#571bc1", "error-container": "#93000a", "on-secondary-container": "#c4abff", "on-error": "#690005", "secondary-fixed": "#e9ddff", "primary": "#adc6ff", "on-secondary": "#3c0091", "tertiary": "#4edea3", "inverse-on-surface": "#233143", "surface-container-high": "#1c2b3c", "on-primary-fixed": "#001a42", "surface-container": "#122131", "outline": "#8c909f", "secondary-fixed-dim": "#d0bcff", "on-tertiary-fixed": "#002113", "on-surface-variant": "#c2c6d6", "surface-container-lowest": "#010f1f", "error": "#ffb4ab", "on-background": "#d4e4fa", "on-primary": "#002e6a", "on-secondary-fixed": "#23005c", "on-tertiary-fixed-variant": "#005236", "primary-fixed": "#d8e2ff", "outline-variant": "#424754", "inverse-surface": "#d4e4fa", "background": "#051424", "on-tertiary": "#003824", "on-secondary-fixed-variant": "#5516be", "primary-fixed-dim": "#adc6ff", "inverse-primary": "#005ac2", "on-primary-container": "#00285d", "surface-variant": "#273647", "tertiary-fixed-dim": "#4edea3", "primary-container": "#4d8eff", "surface-tint": "#adc6ff", "on-tertiary-container": "#00311f", "secondary": "#d0bcff", "surface": "#051424", "surface-bright": "#2c3a4c", "on-primary-fixed-variant": "#004395", "tertiary-container": "#00a572", "surface-dim": "#051424", "tertiary-fixed": "#6ffbbe" }, borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" }, spacing: { gutter: "1rem", "space-md": "1rem", "space-xl": "2rem", "margin-desktop": "2.5rem", margin: "1rem", "gutter-desktop": "1.5rem", "margin-tablet": "1.5rem", "space-lg": "1.5rem", "space-2xl": "3rem", "space-sm": "0.5rem", "space-xs": "0.25rem" }, fontFamily: { "headline-lg": ["Space Grotesk"], "display-mobile": ["Space Grotesk"], "body-md": ["Plus Jakarta Sans"], "headline-sm": ["Space Grotesk"], "label-lg": ["Space Grotesk"], "headline-lg-mobile": ["Space Grotesk"], display: ["Space Grotesk"], "body-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-md": ["Space Grotesk"], "label-md": ["Space Grotesk"], "label-sm": ["Space Grotesk"] }, fontSize: { "headline-lg": ["30px", { lineHeight: "38px", letterSpacing: "-0.01em", fontWeight: "700" }], "display-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }], "body-md": ["14px", { lineHeight: "22px", fontWeight: "400" }], "headline-sm": ["18px", { lineHeight: "26px", fontWeight: "600" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.06em", fontWeight: "700" }], "headline-lg-mobile": ["22px", { lineHeight: "30px", letterSpacing: "0em", fontWeight: "700" }], display: ["40px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "700" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "500" }], "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }], "headline-md": ["22px", { lineHeight: "30px", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }], "label-sm": ["10px", { lineHeight: "14px", letterSpacing: "0.08em", fontWeight: "700" }] } } } };</script>
+</head>
+
+<body
+    class="bg-background font-body-md text-on-surface antialiased min-h-screen selection:bg-secondary selection:text-on-secondary">
+    <div class="min-h-screen w-full flex flex-col items-center justify-center p-space-md bg-background">
+        <main
+            class="w-full max-w-md bg-surface-container-low rounded-xl shadow-[0_10px_30px_rgba(1,15,31,0.9)] p-space-lg">
+            <div class="flex flex-col w-full relative">
+                <div class="flex items-center justify-between mb-space-md">
+                    <div
+                        class="inline-flex items-center gap-space-xs px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm uppercase tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+                        HÁBITOS ROGUE-LITE 16-BIT
+                    </div>
+
+                </div>
+                <div class="flex flex-col items-center text-center mb-space-lg">
+                    <div class="relative w-20 h-20 mb-space-sm flex items-center justify-center">
+                        <div class="absolute inset-0 rounded-2xl bg-primary/20 blur-xl"></div>
+                        <img alt="First Step Logo"
+                            class="relative z-10 w-full h-full object-contain drop-shadow-[0_0_12px_rgba(77,142,255,0.7)]"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_fbI5XwCclSIycRZKFQQGEs7-thjUgitV3k7aCvPOu2dLXGFvWFA8ChV2FscdyiATOMW9cmXYKlEXxBL38H_NjnO2uQmMH3yqCfPVmus_klHtypWK4y8m2B4mt0H3jtqieip6b3wGKY_dos6ytzRyyWxBwe8IZsUru03XjdG4KETyrGq8-0d_jiX4tiwCn2mybeqWpxxremlpRTlkIPblLVJp8Wym24BLtisu7lrJiN_A9lBss6rf5w">
+                    </div>
+                    <h1
+                        class="font-headline-lg text-headline-lg text-on-background tracking-wider uppercase drop-shadow-[0_2px_10px_rgba(77,142,255,0.4)]">
+                        FIRST STEP
+                    </h1>
+                    <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+                        Sube un escalón cada día. Construye un hábito imparable.
+                    </p>
+                </div>
+                <div class="bg-surface-container rounded-xl p-space-md shadow-xl relative overflow-hidden">
+                    <div
+                        class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary-container via-secondary to-tertiary opacity-80">
+                    </div>
+                    <div class="grid grid-cols-2 p-1 bg-surface-container-lowest rounded-lg mb-space-md" role="tablist">
+                        <button aria-selected="true"
+                            class="py-2 rounded-md bg-secondary-container text-on-secondary-container font-label-md text-label-md shadow-sm transition-all flex items-center justify-center gap-1.5"
+                            id="tab-login" role="tab" type="button">
+                            <span class="material-symbols-outlined text-body-sm">login</span>
+                            INICIAR SESIÓN
+                        </button>
+                        <button aria-selected="false"
+                            class="py-2 rounded-md font-label-md text-label-md text-outline hover:text-on-surface transition-all flex items-center justify-center gap-1.5"
+                            id="tab-register" role="tab" type="button">
+                            <span class="material-symbols-outlined text-body-sm">person_add</span>
+                            REGISTRARSE
+                        </button>
+                    </div>
+                    <form class="space-y-space-md" onsubmit="event.preventDefault();">
+                        <div class="space-y-1.5 hidden" id="field-hero-name">
+                            <label
+                                class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-wider"
+                                for="adventurer-name">
+                                Nombre de Aventurero
+                            </label>
+                            <div class="relative">
+                                <span
+                                    class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-body-lg pointer-events-none">badge</span>
+                                <input
+                                    class="w-full bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg pl-10 pr-3 py-2.5 placeholder-outline-variant focus:outline-none focus:bg-surface-container-high transition-colors"
+                                    id="adventurer-name" placeholder="ej. HeroePixel_99" required="" type="text"
+                                    value="HeroePixel_99">
+                            </div>
+                        </div>
+                        <div class="space-y-1.5">
+                            <label
+                                class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-wider"
+                                for="adventurer-email">CORREO ELECTRÓNICO</label>
+                            <div class="relative">
+                                <span
+                                    class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-body-lg pointer-events-none">mail</span>
+                                <input
+                                    class="w-full bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg pl-10 pr-3 py-2.5 placeholder-outline-variant focus:outline-none focus:bg-surface-container-high transition-colors"
+                                    id="adventurer-email" placeholder="heroe@firststep.game" required="" type="email"
+                                    value="heroe@firststep.game">
+                            </div>
+                        </div>
+                        <div class="space-y-1.5">
+                            <div class="flex items-center justify-between">
+                                <label
+                                    class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-wider"
+                                    for="adventurer-password">
+                                    Clave de Acceso / Contraseña
+                                </label>
+                                <a class="font-label-sm text-label-sm text-primary hover:underline" href="#">¿Olvidaste
+                                    tu contraseña?</a>
+                            </div>
+                            <div class="relative">
+                                <span
+                                    class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-body-lg pointer-events-none">lock</span>
+                                <input
+                                    class="w-full bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg pl-10 pr-10 py-2.5 placeholder-outline-variant focus:outline-none focus:bg-surface-container-high transition-colors"
+                                    id="adventurer-password" placeholder="Introduce contraseña" required=""
+                                    type="password" value="SuperSecretP@ss">
+                                <button aria-label="Mostrar u ocultar contraseña"
+                                    class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface transition-colors"
+                                    id="toggle-pw" type="button">
+                                    <span class="material-symbols-outlined text-body-lg" id="pw-icon">visibility</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="space-y-2 pt-space-xs hidden" id="section-mascot">
+                            <div class="flex items-center justify-between">
+                                <label
+                                    class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">
+                                    Elige Tu Compañero
+                                </label>
+                                <span
+                                    class="font-label-sm text-label-sm text-secondary bg-surface-container-lowest px-2 py-0.5 rounded">CLASE:
+                                    EXPLORADOR</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-space-sm" id="mascot-selector">
+                                <div class="relative group cursor-pointer bg-surface-container-lowest rounded-xl p-2.5 hover:bg-surface-container-high transition-all"
+                                    id="mascot-luna">
+                                    <div
+                                        class="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shadow-md">
+                                        <span class="material-symbols-outlined text-body-sm font-bold">check</span>
+                                    </div>
+                                    <div
+                                        class="w-full aspect-square rounded-lg bg-surface-container-lowest overflow-hidden mb-2 relative">
+                                        <img alt="Gato Pixel Mascota Luna"
+                                            class="w-full h-full object-cover transform group-hover:scale-105 transition-transform"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5BVk1N_vq-J9iBAe5lIFH7ZGJ0Uicl44PCHC8bdb9VdrTzLP5_7eb5QeeN7f1J7BqVVo5-z90HVToR6CZ5ZcZ_Ryjw9NLBytnDFK6dnfQC4NeMPpzY4ebOmV4U5DJBWIPa4sXi9x3BVn-NGCGXweA4lD1UM1LdBwpaqcQq8Tpq4KXL3Y4J9h47A4IIj1fkTFDt1EfkNku9TRW9tqPZxKStKX8qN0y2a80lU4jCsuZ1Ku0RfDL7drobQ">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent">
+                                        </div>
+                                        <span
+                                            class="absolute bottom-1 left-1.5 font-label-sm text-label-sm text-secondary">NIVEL
+                                            01</span>
+                                    </div>
+                                    <div class="flex items-baseline justify-between">
+                                        <h2 class="font-headline-sm text-headline-sm text-on-background">Luna</h2>
+
+                                    </div>
+
+                                </div>
+                                <div class="relative group cursor-pointer bg-surface-container-high rounded-xl p-2.5 transition-all shadow-md"
+                                    id="mascot-buster">
+                                    <div
+                                        class="w-full aspect-square rounded-lg bg-surface-container-high overflow-hidden mb-2 relative flex items-center justify-center">
+                                        <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform opacity-80"
+                                            data-alt="Charming retro 16-bit pixel art pet avatar of a loyal guardian dog pup with adventurous floppy ears and red explorer bandana, neon game palette, cute pixel sprite on dark purple backdrop"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYLIT4_IM5uODZHSLdHxTVnIUlUElXbrgil-Mtv9YF0F31i5oBfCjKHnZhu4qjCftCPJzZR6-TSdjQU7YVRaG131EX71mWEBoDlbdx2j9rWd9J7PRI66jW5PdqTh9PQVREWwcc-ElAeIE3Ic3anHnt1ZKAT1Xfj1HJWVo6U65ZzrV-kDobgaSQePxTb7pPcKKOK-eGlNisni_G6Inj0WSSh0M_dzEimloWi66jhNCFxrWNO1CUoJvnjQ">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent">
+                                        </div>
+                                        <span
+                                            class="absolute bottom-1 left-1.5 font-label-sm text-label-sm text-outline">NIVEL
+                                            01</span>
+                                    </div>
+                                    <div class="flex items-baseline justify-between">
+                                        <h2 class="font-headline-sm text-headline-sm text-on-surface">Buster</h2>
+
+                                    </div>
+
+                                    <div
+                                        class="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shadow-md check-badge">
+                                        <span class="material-symbols-outlined text-body-sm font-bold">check</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-primary-container to-secondary-container text-on-surface font-headline-sm text-headline-sm tracking-wide uppercase shadow-[0_0_24px_rgba(77,142,255,0.45)] hover:shadow-[0_0_32px_rgba(77,142,255,0.6)] active:translate-y-0.5 transition-all flex items-center justify-center gap-2 mt-space-md"
+                            id="submit-btn" type="submit">
+                            <span class="material-symbols-outlined text-headline-sm">sports_esports</span>
+                            <span class="">CONTINUAR EXPEDICIÓN</span>
+
+                        </button>
+                    </form>
+                    <div class="flex items-center gap-3 my-space-md">
+                        <div class="h-px bg-surface-variant flex-1"></div>
+                        <span class="font-label-sm text-label-sm text-outline tracking-wider">O</span>
+                        <div class="h-px bg-surface-variant flex-1"></div>
+                    </div>
+                    <div class="flex flex-col gap-2.5">
+
+                        <div class="text-center pt-1">
+                            <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors"
+                                href="#" id="toggle-mode-text">¿ya tienes una cuenta? <span
+                                    class="font-label-sm text-label-sm text-primary underline hover:text-primary-fixed transition-colors">inisiar
+                                    sesion</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="flex items-center justify-center gap-space-lg text-outline font-label-sm text-label-sm mt-space-md uppercase tracking-wider">
+                    <span class="flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> ESTADO DEL SERVIDOR EN LÍNEA
+                    </span>
+
+
+                </div>
+            </div>
+            <script>
+                (function () {
+                    const tabLogin = document.getElementById('tab-login');
+                    const tabRegister = document.getElementById('tab-register');
+                    const fieldHeroName = document.getElementById('field-hero-name');
+                    const sectionMascot = document.getElementById('section-mascot');
+                    const submitBtn = document.getElementById('submit-btn');
+                    const toggleModeText = document.getElementById('toggle-mode-text');
+                    const togglePw = document.getElementById('toggle-pw');
+                    const adventurerPassword = document.getElementById('adventurer-password');
+                    const pwIcon = document.getElementById('pw-icon');
+                    const soundBtn = document.getElementById('sound-btn');
+                    const soundIcon = document.getElementById('sound-icon');
+                    const mascotLuna = document.getElementById('mascot-luna');
+                    const mascotBuster = document.getElementById('mascot-buster');
+
+                    let isRegister = true;
+                    let isMuted = false;
+
+                    function setMode(registerMode) {
+                        isRegister = registerMode;
+                        if (isRegister) {
+                            tabRegister.className = "py-2 rounded-md bg-secondary-container text-on-secondary-container font-label-md text-label-md shadow-sm transition-all flex items-center justify-center gap-1.5";
+                            tabRegister.setAttribute('aria-selected', 'true');
+                            tabLogin.className = "py-2 rounded-md font-label-md text-label-md text-outline hover:text-on-surface transition-all flex items-center justify-center gap-1.5";
+                            tabLogin.setAttribute('aria-selected', 'false');
+                            fieldHeroName.classList.remove('hidden');
+                            sectionMascot.classList.remove('hidden');
+                            submitBtn.querySelector('span:nth-child(2)').textContent = "INICIAR AVENTURA";
+                            toggleModeText.innerHTML = '¿Ya tienes una partida guardada? <span class="font-label-sm text-label-sm text-primary underline">Cargar Partida</span>';
+                        } else {
+                            tabLogin.className = "py-2 rounded-md bg-secondary-container text-on-secondary-container font-label-md text-label-md shadow-sm transition-all flex items-center justify-center gap-1.5";
+                            tabLogin.setAttribute('aria-selected', 'true');
+                            tabRegister.className = "py-2 rounded-md font-label-md text-label-md text-outline hover:text-on-surface transition-all flex items-center justify-center gap-1.5";
+                            tabRegister.setAttribute('aria-selected', 'false');
+                            fieldHeroName.classList.add('hidden');
+                            sectionMascot.classList.add('hidden');
+                            submitBtn.querySelector('span:nth-child(2)').textContent = "CONTINUAR EXPEDICIÓN";
+                            toggleModeText.innerHTML = '¿Nuevo en la torre? <span class="font-label-sm text-label-sm text-primary underline">Crear Partida</span>';
+                        }
+                    }
+
+                    tabLogin.addEventListener('click', () => setMode(false));
+                    tabRegister.addEventListener('click', () => setMode(true));
+                    toggleModeText.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        setMode(!isRegister);
+                    });
+
+                    togglePw.addEventListener('click', () => {
+                        if (adventurerPassword.type === 'password') {
+                            adventurerPassword.type = 'text';
+                            pwIcon.textContent = 'visibility_off';
+                        } else {
+                            adventurerPassword.type = 'password';
+                            pwIcon.textContent = 'visibility';
+                        }
+                    });
+
+                    soundBtn.addEventListener('click', () => {
+                        isMuted = !isMuted;
+                        soundIcon.textContent = isMuted ? 'volume_off' : 'volume_up';
+                    });
+
+                    mascotLuna.addEventListener('click', () => {
+                        mascotLuna.className = "relative group cursor-pointer bg-surface-container-high rounded-xl p-2.5 transition-all shadow-md";
+                        mascotBuster.className = "relative group cursor-pointer bg-surface-container-lowest rounded-xl p-2.5 hover:bg-surface-container-high transition-all";
+                        if (!mascotLuna.querySelector('.material-symbols-outlined')) {
+                            const badge = document.createElement('div');
+                            badge.className = "absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shadow-md check-badge";
+                            badge.innerHTML = '<span class="material-symbols-outlined text-body-sm font-bold">check</span>';
+                            mascotLuna.appendChild(badge);
+                        }
+                        const busterBadge = mascotBuster.querySelector('.check-badge');
+                        if (busterBadge) busterBadge.remove();
+                    });
+
+                    mascotBuster.addEventListener('click', () => {
+                        mascotBuster.className = "relative group cursor-pointer bg-surface-container-high rounded-xl p-2.5 transition-all shadow-md";
+                        mascotLuna.className = "relative group cursor-pointer bg-surface-container-lowest rounded-xl p-2.5 hover:bg-surface-container-high transition-all";
+                        if (!mascotBuster.querySelector('.check-badge')) {
+                            const badge = document.createElement('div');
+                            badge.className = "absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shadow-md check-badge";
+                            badge.innerHTML = '<span class="material-symbols-outlined text-body-sm font-bold">check</span>';
+                            mascotBuster.appendChild(badge);
+                        }
+                        const lunaBadge = mascotLuna.querySelector('.check-badge');
+                        if (lunaBadge) lunaBadge.remove();
+                    });
+                })();
+            </script>
+        </main>
+    </div>
+
+</body>
+
+</html>
